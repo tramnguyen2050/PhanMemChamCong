@@ -1,1 +1,15 @@
 D:\PhanMemChamCong\PhanMemChamCong\PhanMemChamCong\bin\Debug\PhanMemChamCong.exe.config
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Debug\PhanMemChamCong.exe.config
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Debug\PhanMemChamCong.exe
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Debug\PhanMemChamCong.pdb
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.csprojResolveAssemblyReference.cache
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.FrmDangKy.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.FrmDangNhap.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.FrmDashboard.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.FrmMain.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.Properties.Resources.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.csproj.GenerateResource.Cache
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.exe
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Debug\PhanMemChamCong.pdb
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Debug\EntityFramework.dll
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Debug\EntityFramework.xml

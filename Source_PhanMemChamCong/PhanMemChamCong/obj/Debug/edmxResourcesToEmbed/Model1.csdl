@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DEMOModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DEMOEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="DonGiaoHangs" EntityType="DEMOModel.DonGiaoHang" />
+    <EntitySet Name="DonHangs" EntityType="DEMOModel.DonHang" />
+    <EntitySet Name="KhachHangs" EntityType="DEMOModel.KhachHang" />
+    <EntitySet Name="LoaiHangs" EntityType="DEMOModel.LoaiHang" />
+    <EntitySet Name="MaVaches" EntityType="DEMOModel.MaVach" />
+    <EntitySet Name="NhomDonHangs" EntityType="DEMOModel.NhomDonHang" />
+    <EntitySet Name="PhieuChis" EntityType="DEMOModel.PhieuChi" />
+    <EntitySet Name="PhieuCongNoes" EntityType="DEMOModel.PhieuCongNo" />
+    <EntitySet Name="PhieuThus" EntityType="DEMOModel.PhieuThu" />
+    <EntitySet Name="sysdiagrams" EntityType="DEMOModel.sysdiagram" />
+    <EntitySet Name="TaiXes" EntityType="DEMOModel.TaiXe" />
+    <EntitySet Name="Xes" EntityType="DEMOModel.Xe" />
+    <AssociationSet Name="FK_DonGiaoHang_DonHang" Association="DEMOModel.FK_DonGiaoHang_DonHang">
+      <End Role="DonHang" EntitySet="DonHangs" />
+      <End Role="DonGiaoHang" EntitySet="DonGiaoHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonGiaoHang_TaiXe" Association="DEMOModel.FK_DonGiaoHang_TaiXe">
+      <End Role="TaiXe" EntitySet="TaiXes" />
+      <End Role="DonGiaoHang" EntitySet="DonGiaoHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonGiaoHang_Xe" Association="DEMOModel.FK_DonGiaoHang_Xe">
+      <End Role="Xe" EntitySet="Xes" />
+      <End Role="DonGiaoHang" EntitySet="DonGiaoHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonHang__MaKH__76969D2E" Association="DEMOModel.FK__DonHang__MaKH__76969D2E">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonHang__MaLH__778AC167" Association="DEMOModel.FK__DonHang__MaLH__778AC167">
+      <End Role="LoaiHang" EntitySet="LoaiHangs" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_Khachhang" Association="DEMOModel.FK_DonHang_Khachhang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_LoaiHang" Association="DEMOModel.FK_DonHang_LoaiHang">
+      <End Role="LoaiHang" EntitySet="LoaiHangs" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaVach_DonHang" Association="DEMOModel.FK_MaVach_DonHang">
+      <End Role="DonHang" EntitySet="DonHangs" />
+      <End Role="MaVach" EntitySet="MaVaches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhomDonHang_DonHang" Association="DEMOModel.FK_NhomDonHang_DonHang">
+      <End Role="DonHang" EntitySet="DonHangs" />
+      <End Role="NhomDonHang" EntitySet="NhomDonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuThu_DonHang" Association="DEMOModel.FK_PhieuThu_DonHang">
+      <End Role="DonHang" EntitySet="DonHangs" />
+      <End Role="PhieuThu" EntitySet="PhieuThus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhomDonHang_TaiXe" Association="DEMOModel.FK_NhomDonHang_TaiXe">
+      <End Role="TaiXe" EntitySet="TaiXes" />
+      <End Role="NhomDonHang" EntitySet="NhomDonHangs" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DEMOModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DEMOModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="uspDonHang" ReturnType="Collection(DEMOModel.uspDonHang_Result)" />
+  </EntityContainer>
+  <EntityType Name="DonGiaoHang">
+    <Key>
+      <PropertyRef Name="MaDGH" />
+    </Key>
+    <Property Name="MaDGH" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="Int32" Nullable="false" />
+    <Property Name="MaTaiXe" Type="Int32" Nullable="false" />
+    <Property Name="MaXe" Type="Int32" Nullable="false" />
+    <Property Name="ThuTuXepHang" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DonHang" Relationship="DEMOModel.FK_DonGiaoHang_DonHang" FromRole="DonGiaoHang" ToRole="DonHang" />
+    <NavigationProperty Name="TaiXe" Relationship="DEMOModel.FK_DonGiaoHang_TaiXe" FromRole="DonGiaoHang" ToRole="TaiXe" />
+    <NavigationProperty Name="Xe" Relationship="DEMOModel.FK_DonGiaoHang_Xe" FromRole="DonGiaoHang" ToRole="Xe" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="Int32" />
+    <Property Name="MaLH" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NoiNhanHang" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="NoiGiaoHang" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="NgayNhanHang" Type="DateTime" Precision="0" />
+    <Property Name="NGayGiaoHang" Type="DateTime" Precision="0" />
+    <Property Name="NgayLapHD" Type="DateTime" Precision="0" />
+    <Property Name="NgayHetHan" Type="DateTime" Precision="0" />
+    <Property Name="DaThanhToan" Type="Boolean" />
+    <Property Name="QuaHanTT" Type="Boolean" />
+    <NavigationProperty Name="DonGiaoHangs" Relationship="DEMOModel.FK_DonGiaoHang_DonHang" FromRole="DonHang" ToRole="DonGiaoHang" />
+    <NavigationProperty Name="KhachHang" Relationship="DEMOModel.FK__DonHang__MaKH__76969D2E" FromRole="DonHang" ToRole="KhachHang" />
+    <NavigationProperty Name="LoaiHang" Relationship="DEMOModel.FK__DonHang__MaLH__778AC167" FromRole="DonHang" ToRole="LoaiHang" />
+    <NavigationProperty Name="KhachHang1" Relationship="DEMOModel.FK_DonHang_Khachhang" FromRole="DonHang" ToRole="KhachHang" />
+    <NavigationProperty Name="LoaiHang1" Relationship="DEMOModel.FK_DonHang_LoaiHang" FromRole="DonHang" ToRole="LoaiHang" />
+    <NavigationProperty Name="MaVaches" Relationship="DEMOModel.FK_MaVach_DonHang" FromRole="DonHang" ToRole="MaVach" />
+    <NavigationProperty Name="NhomDonHangs" Relationship="DEMOModel.FK_NhomDonHang_DonHang" FromRole="DonHang" ToRole="NhomDonHang" />
+    <NavigationProperty Name="PhieuThus" Relationship="DEMOModel.FK_PhieuThu_DonHang" FromRole="DonHang" ToRole="PhieuThu" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKH" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SDT" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DonHangs" Relationship="DEMOModel.FK__DonHang__MaKH__76969D2E" FromRole="KhachHang" ToRole="DonHang" />
+    <NavigationProperty Name="DonHangs1" Relationship="DEMOModel.FK_DonHang_Khachhang" FromRole="KhachHang" ToRole="DonHang" />
+  </EntityType>
+  <EntityType Name="LoaiHang">
+    <Key>
+      <PropertyRef Name="MaLH" />
+    </Key>
+    <Property Name="MaLH" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLH" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ĐonVi" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DonHangs" Relationship="DEMOModel.FK__DonHang__MaLH__778AC167" FromRole="LoaiHang" ToRole="DonHang" />
+    <NavigationProperty Name="DonHangs1" Relationship="DEMOModel.FK_DonHang_LoaiHang" FromRole="LoaiHang" ToRole="DonHang" />
+  </EntityType>
+  <EntityType Name="MaVach">
+    <Key>
+      <PropertyRef Name="MaVach1" />
+    </Key>
+    <Property Name="MaVach1" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="Int32" Nullable="false" />
+    <Property Name="MaNhom" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DonHang" Relationship="DEMOModel.FK_MaVach_DonHang" FromRole="MaVach" ToRole="DonHang" />
+  </EntityType>
+  <EntityType Name="NhomDonHang">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="Int32" Nullable="false" />
+    <Property Name="MaTaiXe" Type="Int32" Nullable="false" />
+    <Property Name="ThoiGianXuatPhat" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DonHang" Relationship="DEMOModel.FK_NhomDonHang_DonHang" FromRole="NhomDonHang" ToRole="DonHang" />
+    <NavigationProperty Name="TaiXe" Relationship="DEMOModel.FK_NhomDonHang_TaiXe" FromRole="NhomDonHang" ToRole="TaiXe" />
+  </EntityType>
+  <EntityType Name="PhieuChi">
+    <Key>
+      <PropertyRef Name="MaPhieuChi" />
+    </Key>
+    <Property Name="MaPhieuChi" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayChi" Type="DateTime" Precision="0" />
+    <Property Name="NguoiNhan" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TienChi" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ĐiaDiem" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LyDo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="TrangThai" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PhieuCongNo">
+    <Key>
+      <PropertyRef Name="MaPhieuCN" />
+    </Key>
+    <Property Name="MaPhieuCN" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="Int32" Nullable="false" />
+    <Property Name="MaKH" Type="Int32" Nullable="false" />
+    <Property Name="MaPhieuThu" Type="Int32" Nullable="false" />
+    <Property Name="TienNo" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="PhieuThu">
+    <Key>
+      <PropertyRef Name="MaPhieuThu" />
+    </Key>
+    <Property Name="MaPhieuThu" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="Int32" Nullable="false" />
+    <Property Name="KhachHang" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TienThu" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="NgayThu" Type="DateTime" Precision="0" />
+    <Property Name="ĐiaDiem" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <Property Name="GhiChu" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DonHang" Relationship="DEMOModel.FK_PhieuThu_DonHang" FromRole="PhieuThu" ToRole="DonHang" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaiXe">
+    <Key>
+      <PropertyRef Name="MaTaiXe" />
+    </Key>
+    <Property Name="MaTaiXe" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTaiXe" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DonGiaoHangs" Relationship="DEMOModel.FK_DonGiaoHang_TaiXe" FromRole="TaiXe" ToRole="DonGiaoHang" />
+    <NavigationProperty Name="NhomDonHangs" Relationship="DEMOModel.FK_NhomDonHang_TaiXe" FromRole="TaiXe" ToRole="NhomDonHang" />
+  </EntityType>
+  <EntityType Name="Xe">
+    <Key>
+      <PropertyRef Name="MaXe" />
+    </Key>
+    <Property Name="MaXe" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BienSo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DonGiaoHangs" Relationship="DEMOModel.FK_DonGiaoHang_Xe" FromRole="Xe" ToRole="DonGiaoHang" />
+  </EntityType>
+  <Association Name="FK_DonGiaoHang_DonHang">
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonGiaoHang" Type="DEMOModel.DonGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="DonGiaoHang">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonGiaoHang_TaiXe">
+    <End Role="TaiXe" Type="DEMOModel.TaiXe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonGiaoHang" Type="DEMOModel.DonGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiXe">
+        <PropertyRef Name="MaTaiXe" />
+      </Principal>
+      <Dependent Role="DonGiaoHang">
+        <PropertyRef Name="MaTaiXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonGiaoHang_Xe">
+    <End Role="Xe" Type="DEMOModel.Xe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonGiaoHang" Type="DEMOModel.DonGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xe">
+        <PropertyRef Name="MaXe" />
+      </Principal>
+      <Dependent Role="DonGiaoHang">
+        <PropertyRef Name="MaXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonHang__MaKH__76969D2E">
+    <End Role="KhachHang" Type="DEMOModel.KhachHang" Multiplicity="0..1" />
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonHang__MaLH__778AC167">
+    <End Role="LoaiHang" Type="DEMOModel.LoaiHang" Multiplicity="0..1" />
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHang">
+        <PropertyRef Name="MaLH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaLH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_Khachhang">
+    <End Role="KhachHang" Type="DEMOModel.KhachHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_LoaiHang">
+    <End Role="LoaiHang" Type="DEMOModel.LoaiHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHang">
+        <PropertyRef Name="MaLH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaLH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaVach_DonHang">
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MaVach" Type="DEMOModel.MaVach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="MaVach">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhomDonHang_DonHang">
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhomDonHang" Type="DEMOModel.NhomDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="NhomDonHang">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuThu_DonHang">
+    <End Role="DonHang" Type="DEMOModel.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhieuThu" Type="DEMOModel.PhieuThu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="PhieuThu">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhomDonHang_TaiXe">
+    <End Role="TaiXe" Type="DEMOModel.TaiXe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhomDonHang" Type="DEMOModel.NhomDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiXe">
+        <PropertyRef Name="MaTaiXe" />
+      </Principal>
+      <Dependent Role="NhomDonHang">
+        <PropertyRef Name="MaTaiXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="uspDonHang_Result">
+    <Property Type="Int32" Name="MaDH" Nullable="false" />
+    <Property Type="String" Name="TenKH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenLH" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="NgayNhanHang" Nullable="true" />
+  </ComplexType>
+</Schema>

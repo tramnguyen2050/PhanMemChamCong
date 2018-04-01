@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DEMOModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DEMOModelStoreContainer">
+    <EntitySet Name="DonGiaoHang" EntityType="DEMOModel.Store.DonGiaoHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DonHang" EntityType="DEMOModel.Store.DonHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KhachHang" EntityType="DEMOModel.Store.KhachHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiHang" EntityType="DEMOModel.Store.LoaiHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MaVach" EntityType="DEMOModel.Store.MaVach" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NhomDonHang" EntityType="DEMOModel.Store.NhomDonHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhieuChi" EntityType="DEMOModel.Store.PhieuChi" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhieuCongNo" EntityType="DEMOModel.Store.PhieuCongNo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhieuThu" EntityType="DEMOModel.Store.PhieuThu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="DEMOModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaiXe" EntityType="DEMOModel.Store.TaiXe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Xe" EntityType="DEMOModel.Store.Xe" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__DonHang__MaKH__76969D2E" Association="DEMOModel.Store.FK__DonHang__MaKH__76969D2E">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="DonHang" EntitySet="DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonHang__MaLH__778AC167" Association="DEMOModel.Store.FK__DonHang__MaLH__778AC167">
+      <End Role="LoaiHang" EntitySet="LoaiHang" />
+      <End Role="DonHang" EntitySet="DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonGiaoHang_DonHang" Association="DEMOModel.Store.FK_DonGiaoHang_DonHang">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="DonGiaoHang" EntitySet="DonGiaoHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonGiaoHang_TaiXe" Association="DEMOModel.Store.FK_DonGiaoHang_TaiXe">
+      <End Role="TaiXe" EntitySet="TaiXe" />
+      <End Role="DonGiaoHang" EntitySet="DonGiaoHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonGiaoHang_Xe" Association="DEMOModel.Store.FK_DonGiaoHang_Xe">
+      <End Role="Xe" EntitySet="Xe" />
+      <End Role="DonGiaoHang" EntitySet="DonGiaoHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_Khachhang" Association="DEMOModel.Store.FK_DonHang_Khachhang">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="DonHang" EntitySet="DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_LoaiHang" Association="DEMOModel.Store.FK_DonHang_LoaiHang">
+      <End Role="LoaiHang" EntitySet="LoaiHang" />
+      <End Role="DonHang" EntitySet="DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaVach_DonHang" Association="DEMOModel.Store.FK_MaVach_DonHang">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="MaVach" EntitySet="MaVach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhomDonHang_DonHang" Association="DEMOModel.Store.FK_NhomDonHang_DonHang">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="NhomDonHang" EntitySet="NhomDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhomDonHang_TaiXe" Association="DEMOModel.Store.FK_NhomDonHang_TaiXe">
+      <End Role="TaiXe" EntitySet="TaiXe" />
+      <End Role="NhomDonHang" EntitySet="NhomDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuThu_DonHang" Association="DEMOModel.Store.FK_PhieuThu_DonHang">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="PhieuThu" EntitySet="PhieuThu" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DonGiaoHang">
+    <Key>
+      <PropertyRef Name="MaDGH" />
+    </Key>
+    <Property Name="MaDGH" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="int" Nullable="false" />
+    <Property Name="MaTaiXe" Type="int" Nullable="false" />
+    <Property Name="MaXe" Type="int" Nullable="false" />
+    <Property Name="ThuTuXepHang" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="MaLH" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DonGia" Type="money" />
+    <Property Name="TongTien" Type="money" />
+    <Property Name="NoiNhanHang" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoiGiaoHang" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayNhanHang" Type="date" />
+    <Property Name="NGayGiaoHang" Type="date" />
+    <Property Name="NgayLapHD" Type="date" />
+    <Property Name="NgayHetHan" Type="date" />
+    <Property Name="DaThanhToan" Type="bit" />
+    <Property Name="QuaHanTT" Type="bit" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TenKH" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SDT" Type="varchar" Nullable="false" MaxLength="12" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LoaiHang">
+    <Key>
+      <PropertyRef Name="MaLH" />
+    </Key>
+    <Property Name="MaLH" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TenLH" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ĐonVi" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="MaVach">
+    <Key>
+      <PropertyRef Name="MaVach" />
+    </Key>
+    <Property Name="MaVach" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="int" Nullable="false" />
+    <Property Name="MaNhom" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NhomDonHang">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="int" Nullable="false" />
+    <Property Name="MaTaiXe" Type="int" Nullable="false" />
+    <Property Name="ThoiGianXuatPhat" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhieuChi">
+    <Key>
+      <PropertyRef Name="MaPhieuChi" />
+    </Key>
+    <Property Name="MaPhieuChi" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NgayChi" Type="date" />
+    <Property Name="NguoiNhan" Type="nvarchar" MaxLength="50" />
+    <Property Name="TienChi" Type="money" Nullable="false" />
+    <Property Name="ĐiaDiem" Type="nvarchar" MaxLength="100" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="200" />
+    <Property Name="TrangThai" Type="bit" />
+  </EntityType>
+  <EntityType Name="PhieuCongNo">
+    <Key>
+      <PropertyRef Name="MaPhieuCN" />
+    </Key>
+    <Property Name="MaPhieuCN" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="int" Nullable="false" />
+    <Property Name="MaKH" Type="int" Nullable="false" />
+    <Property Name="MaPhieuThu" Type="int" Nullable="false" />
+    <Property Name="TienNo" Type="money" />
+  </EntityType>
+  <EntityType Name="PhieuThu">
+    <Key>
+      <PropertyRef Name="MaPhieuThu" />
+    </Key>
+    <Property Name="MaPhieuThu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaDH" Type="int" Nullable="false" />
+    <Property Name="KhachHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="TienThu" Type="money" Nullable="false" />
+    <Property Name="NgayThu" Type="date" />
+    <Property Name="ĐiaDiem" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrangThai" Type="bit" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiXe">
+    <Key>
+      <PropertyRef Name="MaTaiXe" />
+    </Key>
+    <Property Name="MaTaiXe" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TenTaiXe" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Xe">
+    <Key>
+      <PropertyRef Name="MaXe" />
+    </Key>
+    <Property Name="MaXe" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BienSo" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__DonHang__MaKH__76969D2E">
+    <End Role="KhachHang" Type="DEMOModel.Store.KhachHang" Multiplicity="0..1" />
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonHang__MaLH__778AC167">
+    <End Role="LoaiHang" Type="DEMOModel.Store.LoaiHang" Multiplicity="0..1" />
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHang">
+        <PropertyRef Name="MaLH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaLH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonGiaoHang_DonHang">
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonGiaoHang" Type="DEMOModel.Store.DonGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="DonGiaoHang">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonGiaoHang_TaiXe">
+    <End Role="TaiXe" Type="DEMOModel.Store.TaiXe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonGiaoHang" Type="DEMOModel.Store.DonGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiXe">
+        <PropertyRef Name="MaTaiXe" />
+      </Principal>
+      <Dependent Role="DonGiaoHang">
+        <PropertyRef Name="MaTaiXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonGiaoHang_Xe">
+    <End Role="Xe" Type="DEMOModel.Store.Xe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonGiaoHang" Type="DEMOModel.Store.DonGiaoHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xe">
+        <PropertyRef Name="MaXe" />
+      </Principal>
+      <Dependent Role="DonGiaoHang">
+        <PropertyRef Name="MaXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_Khachhang">
+    <End Role="KhachHang" Type="DEMOModel.Store.KhachHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_LoaiHang">
+    <End Role="LoaiHang" Type="DEMOModel.Store.LoaiHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHang">
+        <PropertyRef Name="MaLH" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaLH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaVach_DonHang">
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MaVach" Type="DEMOModel.Store.MaVach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="MaVach">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhomDonHang_DonHang">
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhomDonHang" Type="DEMOModel.Store.NhomDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="NhomDonHang">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhomDonHang_TaiXe">
+    <End Role="TaiXe" Type="DEMOModel.Store.TaiXe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhomDonHang" Type="DEMOModel.Store.NhomDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiXe">
+        <PropertyRef Name="MaTaiXe" />
+      </Principal>
+      <Dependent Role="NhomDonHang">
+        <PropertyRef Name="MaTaiXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuThu_DonHang">
+    <End Role="DonHang" Type="DEMOModel.Store.DonHang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhieuThu" Type="DEMOModel.Store.PhieuThu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="PhieuThu">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspDonHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>
