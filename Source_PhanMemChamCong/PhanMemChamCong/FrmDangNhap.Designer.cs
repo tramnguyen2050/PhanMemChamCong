@@ -75,6 +75,7 @@
             this.btnDangNhap.TabIndex = 10;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnDong
             // 
@@ -85,6 +86,7 @@
             this.btnDong.TabIndex = 11;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // lblGhiChu
             // 
@@ -93,7 +95,7 @@
             this.lblGhiChu.Name = "lblGhiChu";
             this.lblGhiChu.Size = new System.Drawing.Size(346, 27);
             this.lblGhiChu.TabIndex = 12;
-            this.lblGhiChu.Text = "thể hiện ghi chú";
+            this.lblGhiChu.Click += new System.EventHandler(this.lblGhiChu_Click);
             // 
             // txtUser
             // 
@@ -108,6 +110,7 @@
             this.txtPassword.Location = new System.Drawing.Point(182, 109);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(223, 32);
             this.txtPassword.TabIndex = 14;
             // 
@@ -126,6 +129,8 @@
             this.Controls.Add(this.lblPassword);
             this.Name = "FrmDangNhap";
             this.Text = "Màn hình đăng nhập";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDangNhap_FormClosed);
+            this.Load += new System.EventHandler(this.FrmDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,5 +16,31 @@ namespace PhanMemChamCong
         {
             InitializeComponent();
         }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            FrmDangKy dangky = new FrmDangKy();
+            this.Hide();
+            dangky.ShowDialog();
+            this.Close();
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            FrmDangNhap dangnhap = new FrmDangNhap();
+            this.Hide();
+            dangnhap.ShowDialog();
+            this.Close();
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,0 +1,13 @@
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Release\PhanMemChamCong.exe.config
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Release\PhanMemChamCong.exe
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Release\PhanMemChamCong.pdb
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Release\EntityFramework.dll
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\bin\Release\EntityFramework.xml
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.FrmDangKy.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.FrmDangNhap.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.FrmDashboard.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.FrmMain.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.Properties.Resources.resources
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.csproj.GenerateResource.Cache
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.exe
+D:\PhanMemChamCong\Source_PhanMemChamCong\PhanMemChamCong\obj\Release\PhanMemChamCong.pdb
